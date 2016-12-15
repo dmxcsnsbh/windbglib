@@ -881,7 +881,7 @@ class Debugger:
 			regs.append("rip")
 		reginfo = {}
 		for thisreg in regs:
-			reginfo[thisreg.upper()] = int(reg(thisreg))
+			reginfo[thisreg.lower()] = int(reg(thisreg))
 		return reginfo
 	
 
