@@ -62,8 +62,8 @@ PageSections = {}
 ModuleCache = {}
 PEBModList = {}
 
-Registers32BitsOrder = ["EAX", "ECX", "EDX", "EBX", "ESP", "EBP", "ESI", "EDI"]
-Registers64BitsOrder = ["RAX", "RCX", "EDX", "RBX", "RSP", "RBP", "RSI", "RDI", "R8", "R9", "R10", "R11", "R12", "R13", "R14", "R15"]
+Registers32BitsOrder = ["eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi"]
+Registers64BitsOrder = ["rax", "rcx", "rdx", "rbx", "rsp", "rbp", "rsi", "rdi", "r8", "r9", "r10", "r11", "r12", "r13", "r14", "r15"]
 
 if is64bitSystem():
 	arch = 64
@@ -875,10 +875,10 @@ class Debugger:
 		regs = []
 		if arch == 32:
 			regs = Registers32BitsOrder
-			regs.append("EIP")
+			regs.append("eip")
 		if arch == 64:
 			regs = Registers64BitsOrder
-			regs.append("RIP")
+			regs.append("rip")
 		reginfo = {}
 		for thisreg in regs:
 			reginfo[thisreg.upper()] = int(reg(thisreg))
